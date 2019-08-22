@@ -53,7 +53,7 @@ module.exports = NodeHelper.create({
             // get cpu temp
             async.apply(exec, temp_conv + ' /sys/class/thermal/thermal_zone0/temp'),
             // get gpu temp
-            async.apply(exec, "/opt/vc/bin/vcgencmd measure_temp | awk -F\"=|'\" '{print $2}'"),
+            async.apply(exec, "/opt/vc/bin/vcgencmd measure_temp | awk -F\"=|'\" '{print $2\"°C\"}'"),
             // get free ram in %
             async.apply(exec, "free | awk '/^Mem:/ {print $4*100/$2}'"),
             // get uptime
@@ -64,7 +64,7 @@ module.exports = NodeHelper.create({
         function (err, res) {
             var stats = {};
             stats.cpuTemp = res[0][0];
-            stats.cpuTemp = res[1][0];
+            stats.gpuTemp = res[1][0];
             stats.freeMem = res[2][0];
             stats.upTime = res[3][0].split(' ');
             stats.freeSpace = res[4][0];

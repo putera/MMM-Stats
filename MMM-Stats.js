@@ -39,11 +39,11 @@ Module.register('MMM-Stats', {
         moment.locale(this.config.language);
 
         this.stats = {};
-        this.stats.cpuTemp = this.translate("LOADING");
-        this.stats.gpuTemp = this.translate("LOADING");
-        this.stats.freeMem = this.translate("LOADING");
-        this.stats.upTime = this.translate("LOADING");
-        this.stats.freeSpace = this.translate("LOADING");
+        this.stats.cpuTemp = "-";
+        this.stats.gpuTemp = "-";
+        this.stats.freeMem = "-";
+        this.stats.upTime = "-";
+        this.stats.freeSpace = "-";
 
         this.sendSocketNotification('CONFIG', this.config);
     },
@@ -85,7 +85,7 @@ Module.register('MMM-Stats', {
             },
             gpuTemp: {
                 text: 'GPU_TEMP',
-                icon: 'fa-tachometer'
+                icon: 'fa-thermometer'
             },
             freeMem: {
                 text: 'RAM_FREE',
@@ -115,7 +115,7 @@ Module.register('MMM-Stats', {
 
             if (self.config.label.match(/^(icon|textAndIcon)$/)) {
                 var c2 = document.createElement('td');
-                c2.innerHTML = ` <i class="fa ${sysData[item].icon} fa-fw"></i>`;
+                c2.innerHTML = ` &nbsp; <i class="fa ${sysData[item].icon} fa-fw"></i>`;
                 row.appendChild(c2);
             }
 
