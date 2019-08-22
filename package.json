@@ -1,0 +1,19 @@
+{
+  "name": "MMM-Stats",
+  "version": "1.0.0",
+  "description": "A MagicMirror² modules for display a system info",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/putera/MMM-Stats.git"
+  },
+  "keywords": ["MagicMirror", "Stats", "system info", "info"],
+  "author": "Zulkifli Mohamed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/putera/MMM-Stats/issues"
+  },
+  "homepage": "https://github.com/putera/MMM-Stats",
+  "dependencies": {
+    "async": "latest"
+  }
+}
