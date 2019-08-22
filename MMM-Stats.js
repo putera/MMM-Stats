@@ -77,9 +77,10 @@ Module.register('MMM-Stats', {
 
     getDom: function() {
         var self = this;
-        var wrapper = document.createElement('table');
+        var table = document.createElement('table');
+        var wrapper = document.createElement('div');
         wrapper.style.width = this.config.width;
-        wrapper.style.align = this.config.tableAlign;
+        wrapper.style.float = this.config.tableAlign;
 
         var sysData = {
             cpuTemp: {
@@ -128,7 +129,8 @@ Module.register('MMM-Stats', {
             c3.innerText = self.stats[item];
             row.appendChild(c3);
 
-            wrapper.appendChild(row);
+            table.appendChild(row);
+            wrapper.appendChild(table);
         });
 
         return wrapper;
