@@ -14,7 +14,8 @@ To use this module, add it to the modules array in the `config/config.js` file:
 modules: [
 	{
 		module: 'MMM-Stats',
-		position: 'bottom_right',
+		position: 'bottom_bar',
+		classes: 'xsmall thin white',
 		config: {
 			// See 'Configuration options' for more information.
 			units: 'metric', // kelvin, imperial
@@ -32,6 +33,8 @@ The following properties can be configured:
 | --- | --- |
 | `updateInterval` | in seconds |
 | `align` | Align the text on the display |
+| `width` | Table width on the display |
+| `tableAlign` | Table alignment |
 | `language` | Your choosen language |
 | `units` | metric (*default*), kelvin, imperial |
 | `thresholdCPUTemp` | Threshold CPU temperature |

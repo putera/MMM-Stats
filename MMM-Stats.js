@@ -12,6 +12,7 @@ Module.register('MMM-Stats', {
         updateInterval: 10,
         animationSpeed: 0,
         align: 'right',
+        tableAlign: 'right',
         language: config.language,
         units: config.units,
         thresholdCPUTemp: 60,
@@ -69,7 +70,7 @@ Module.register('MMM-Stats', {
             upTime = parseInt(payload.upTime[0]);
             this.stats.upTime = moment.duration(upTime, "seconds").humanize();
             this.stats.freeSpace = payload.freeSpace;
-            
+
             this.updateDom(this.config.animationSpeed);
         }
     },
@@ -77,6 +78,8 @@ Module.register('MMM-Stats', {
     getDom: function() {
         var self = this;
         var wrapper = document.createElement('table');
+        wrapper.style.width = this.config.width;
+        wrapper.style.align = this.config.tableAlign;
 
         var sysData = {
             cpuTemp: {
